@@ -1,3 +1,3 @@
 # Cases
 
-Sanitized write-ups will land here as each investigation finishes — no raw infrastructure details (IPs, hostnames, credentials), just methodology and findings, following the same report structure used to develop them privately. Interview-prep notes (self-assessed weak points, rehearsal material) stay private and are never pushed here.
+Sanitized write-ups land here as each investigation finishes. No raw infrastructure details (IPs, hostnames, credentials), just methodology and findings, following the same report structure used to develop them privately. Interview-prep notes (self-assessed weak points, rehearsal material) stay private and are never pushed here.
