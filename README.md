@@ -6,7 +6,12 @@ I'm Alan Arias, a self-taught software engineer (4+ years, production auth/RBAC/
 
 ## Status
 
-First case is up: a two-stage botnet dropper campaign traced against my own SSH honeypot. See `cases/2026-07-26-neutron-c2-honeypot/`. More on the way.
+Two cases up so far:
+
+- `cases/2026-07-26-neutron-c2-honeypot/`: a two-stage botnet dropper campaign traced against my own SSH honeypot.
+- `cases/2026-08-04-persistent-fingerprinting-campaign/`: a five-week credential and fingerprinting campaign from a single actor, including evidence it actively detects and avoids the honeypot.
+
+More on the way.
 
 ## Methodology
 
