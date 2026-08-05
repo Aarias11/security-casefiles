@@ -228,6 +228,16 @@ The compromised host was destroyed and rebuilt. A Cowrie SSH honeypot was deploy
 
 The key material and command sequence observed in the honeypot are byte-identical to the key recovered from the compromised host eleven months earlier.
 
+**Artifact-level confirmation.** The command-string match above is corroborated by a stronger form of evidence. Cowrie captures the `authorized_keys` file at the moment the attacker writes it, storing it by content hash. The captured artifact is a 389-byte OpenSSH RSA public key with SHA256 `a8460f446be540410004b1a8db4083773fa46f7fe76fa84219c93daa1669f8f2`, whose contents terminate in the comment `mdrfckr`. Hash verified directly against the stored file.
+
+The same SHA256 appears in honeypot logs retained from September 2025, and the file remained in active delivery as of 5 August 2026, observed in a session originating from `112.216.108.62` (LG DACOM, South Korea). Because Cowrie deduplicates captures by hash, the on-disk copy is dated to its first observation on the current host in February 2026.
+
+This establishes an eleven-month artifact-level match: the same 389 bytes, unchanged, spanning a full host rebuild. That is materially stronger than a command-string match, which could in principle be reproduced by a different actor copying a published playbook. An identical file hash cannot.
+
+**Revised interpretation of a September 2025 observation.** Initial review of the September 2025 honeypot logs recorded 72 file-download events all originating from `172.17.0.1`, the Docker bridge gateway, and these were provisionally read as local testing activity. That reading is probably wrong. The captured artifact for those events carries the hash above, meaning they were deliveries of the Outlaw key rather than operator testing. The uniform gateway source address is better explained by the Cowrie container running on a Docker bridge network at that time, causing NAT to rewrite every source address to the gateway and destroying attacker attribution. The current deployment uses host networking, which preserves real source addresses. This explanation is inferred from the networking configuration rather than proven from a retained container config, and is recorded as such.
+
+**Campaign variants.** The August 2026 session executed only the two key-planting commands before disconnecting, without the password change, competitor removal, or system fingerprinting observed in longer sessions from the same campaign. The campaign therefore appears to run at least two modes: a minimal backdoor-only variant and a full nineteen-command sequence. The client string in that session was `SSH-2.0-libssh_0.9.6`, a programmatic SSH library rather than an interactive client, and inter-command gaps of 3 to 5 milliseconds are consistent with scripted execution. The credential used was `root` with the single-character password `w`.
+
 **Analysis.** The same threat actor, using unchanged tooling, has continuously targeted this infrastructure across a host rebuild and eleven months of elapsed time.
 
 Two conclusions follow. First, the tooling is static: the key material has not been rotated despite being trivially fingerprintable and publicly documented, indicating an operation optimised for scale rather than evasion. Second, and more important for interpreting the original incident, targeting is **opportunistic rather than directed**. Roughly 27% of all command-executing sessions against the honeypot belong to this single campaign. Nothing in the data suggests this infrastructure was selected; it was reachable, and the campaign is indiscriminate.
@@ -309,6 +319,8 @@ Attacker-side only. Provided for defensive use.
 | C2 (observed live beacon) | `179.43.139.85:80` |
 | Attacker source address | `91.132.138.238` |
 | SSH key comment | `mdrfckr` |
+| Planted `authorized_keys` artifact (SHA256) | `a8460f446be540410004b1a8db4083773fa46f7fe76fa84219c93daa1669f8f2` (389 bytes, OpenSSH RSA public key) |
+| Observed client string | `SSH-2.0-libssh_0.9.6` |
 | Hidden directory | `~/.configrc7/` with `a/` and `b/` subdirectories |
 | Staging directory | `/tmp/.X2t-unix/.rsync/` |
 | Payload paths | `/tmp/.kswapd00`, `/var/tmp/.kswapd00`, `~/.configrc7/a/kswapd00` |
