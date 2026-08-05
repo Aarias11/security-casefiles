@@ -6,8 +6,9 @@ I'm Alan Arias, a self-taught software engineer (4+ years, production auth/RBAC/
 
 ## Status
 
-Two cases up so far:
+Three cases up so far:
 
+- `cases/2025-09-08-outlaw-botnet-compromise/`: a real compromise of a VPS I own, used to brute-force at least 140 third-party systems until my provider issued an abuse notice. Root cause was a cloud-init drop-in silently re-enabling SSH password authentication. Attributed to the Outlaw (Dota) botnet, and correlated eleven months later against 70,626 sessions from the same actor on the replacement host's honeypot. Includes three of my own original conclusions that later evidence overturned.
 - `cases/2026-07-26-neutron-c2-honeypot/`: a two-stage botnet dropper campaign traced against my own SSH honeypot.
 - `cases/2026-08-04-persistent-fingerprinting-campaign/`: a five-week credential and fingerprinting campaign from a single actor, including evidence it actively detects and avoids the honeypot.
 
