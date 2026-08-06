@@ -1,6 +1,6 @@
 # Security Casefiles
 
-Real security research and investigative work, documented properly. Not a certificate-only portfolio.
+Write-ups from real security investigations on servers I own.
 
 Hey all! I'm Alan, an engineer who enjoys researching and investigating attacker behavior, malware, and whatever else turns up on my servers, with AI helping me get to the bottom of things.
 
