@@ -42,7 +42,7 @@ These constraints materially limit what this report can prove, and are stated up
 - The original host was destroyed before forensic imaging. Remediation prioritised stopping active outbound attacks over evidence preservation, and the VPS was reinstalled roughly four days after detection. No disk image or memory capture exists.
 - No memory forensics. The malicious processes were observed live and their output recorded, but no memory dump was taken.
 - The miner binary was not preserved. Its size, location, behaviour and resource consumption were documented; the file itself is gone.
-- Honeypot logs from the compromised host did not survive the rebuild. Honeypot data referenced here comes from the replacement host.
+- Honeypot logs from the compromised host did not survive the rebuild. Honeypot data referenced here comes from the replacement host, including the September 2025 records used in Finding 5: the replacement was online and collecting within days of the rebuild, so its earliest data is contemporaneous with the incident's aftermath rather than surviving from the compromised machine.
 - The moment of initial access is not established. Authentication logs were reviewed only back to roughly three days before the earliest confirmed attacker activity, and the original `authorized_keys` file was not retained. The initial access chain is partly inferred; the reasoning and its limits are set out in Finding 1.
 - Portions of the timeline are reconstructed from contemporaneous notes taken during live response rather than from primary log artifacts. Where a claim rests on notes, this report says so.
 
