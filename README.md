@@ -2,7 +2,11 @@
 
 Real security research and investigative work, documented properly. Not a certificate-only portfolio.
 
-I'm Alan Arias, a self-taught software engineer (4+ years, production auth/RBAC/audit-logging/API work) with a Criminal Justice degree I hadn't used professionally until now. This repo is where that combination actually shows up: honeypot and threat analysis, OSINT investigation, and detection tooling, each written up against real frameworks instead of "got the flag" one-liners.
+Hey all! I'm Alan, an engineer who enjoys researching and investigating attacker behavior, malware, and whatever else turns up on my servers, with AI helping me get to the bottom of things.
+
+I currently run an SSH honeypot on a VPS I own and built a SIEM to watch it. This repo is where I write up what I find.
+
+My background is production engineering, mostly auth, RBAC, audit logging and API security, so I tend to build my own tooling. I've also got a Criminal Justice degree, and the investigative side of it carries over way more than I expected.
 
 ## Status
 
@@ -22,8 +26,6 @@ Every case here follows a consistent structure and maps to established framework
 - PTES: pentest methodology shape, applied even to solo practice work.
 - Diamond Model of Intrusion Analysis: adversary, infrastructure, capability, and victim, for CTI-style write-ups.
 - Chain-of-custody principles: evidentiary rigor for OSINT and forensics work.
-
-The investigations here are my own. I use AI as a reviewer and sounding board, to pressure-test conclusions, check reasoning, and catch errors, not to generate findings. The analysis, the judgment calls, and the mistakes are mine.
 
 ## Links
 
