@@ -23,6 +23,8 @@ Every case here follows a consistent structure and maps to established framework
 - Diamond Model of Intrusion Analysis: adversary, infrastructure, capability, and victim, for CTI-style write-ups.
 - Chain-of-custody principles: evidentiary rigor for OSINT and forensics work.
 
+The investigations here are my own. I use AI as a reviewer and sounding board, to pressure-test conclusions, check reasoning, and catch errors, not to generate findings. The analysis, the judgment calls, and the mistakes are mine.
+
 ## Links
 
 - Portfolio: [alanarias.com](https://alanarias.com)
